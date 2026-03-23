@@ -10,5 +10,8 @@ export default defineConfig({
 
   vite: {
     plugins: [tailwindcss()],
+    preview: {
+      allowedHosts: ['nexus-ia.tech'], // Autoriza a Dokploy a mostrar la web
+    },
   },
 })
