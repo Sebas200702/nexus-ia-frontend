@@ -7,9 +7,9 @@
   },
   "scripts": {
     "dev": "astro dev --host",
-    "start": "bun x astro preview --host 0.0.0.0 --port 4321",
+    "start": "bun dist/server/entry.mjs",
     "build": "astro build",
-    "preview": "astro preview --host 0.0.0.0 --port 4321",
+    "preview": "astro preview ",
     "format": "prettier --write . ",
     "astro": "astro"
   },
