@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "start": "astro preview",
+    "start": "astro preview --port 4321",
     "build": "astro build",
     "preview": "astro preview",
     "format": "prettier --write . ",
