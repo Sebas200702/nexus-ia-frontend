@@ -6,10 +6,10 @@
     "node": ">=22.12.0"
   },
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro preview --port 4321",
+    "dev": "astro dev --host",
+    "start": "astro preview --host 0.0.0.0 --port 4321",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "astro preview --host 0.0.0.0 --port 4321",
     "format": "prettier --write . ",
     "astro": "astro"
   },
