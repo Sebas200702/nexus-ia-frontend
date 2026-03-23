@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "astro dev --host",
-    "start": "bun x astro preview --host 0.0.0.0 --port 4321 --allowed-host nexus-ia.tech",
+    "start": "bun x astro preview --host 0.0.0.0 --port 4321",
     "build": "astro build",
     "preview": "astro preview --host 0.0.0.0 --port 4321",
     "format": "prettier --write . ",

@@ -11,7 +11,12 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
     preview: {
-      allowedHosts: ['nexus-ia.tech'], // Autoriza a Dokploy a mostrar la web
+      allowedHosts: [
+        'nexus-ia.tech',
+        'www.nexus-ia.tech',
+        'localhost',
+        '127.0.0.1',
+      ],
     },
   },
 })
