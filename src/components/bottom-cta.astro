@@ -1,0 +1,38 @@
+---
+import ArrowIcon from '@/icons/arrow.astro'
+import DocsIcon from '@/icons/docs.astro'
+---
+<section class="relative z-10 w-full max-w-5xl mx-auto px-6 py-32 text-center animate-fade-up opacity-0 delay-500">
+
+  <div class="mb-20">
+    <h3 class="font-display text-3xl md:text-5xl font-bold text-white tracking-tight mb-6">
+      We don’t replace providers.<br/>
+      <span class="text-gray-500">We make them compete.</span>
+    </h3>
+    <p class="text-gray-400 max-w-2xl mx-auto font-light text-lg">
+      Built for SaaS teams and developers tired of overpaying for every LLM request. If AI is a growing part of your cost structure, you need a layer that optimizes it automatically.
+    </p>
+  </div>
+
+  <div class="p-12 md:p-20 border border-white/10 bg-linear-to-b from-white/5 to-transparent relative overflow-hidden">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-linear-to-r from-transparent via-purple-500 to-transparent opacity-50"></div>
+
+    <h2 class="font-display text-4xl md:text-6xl font-bold text-white mb-6">
+      Stop paying premium<br/>prices by default.
+    </h2>
+    <p class="text-purple-200 font-mono text-sm uppercase tracking-widest mb-10">
+      Let your system optimize AI costs for you. Keep the control you need.
+    </p>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="/playground" class="group flex items-center gap-2 bg-white text-[#0a0718] px-8 py-4 font-mono text-sm uppercase tracking-widest hover:bg-gray-200 transition-colors">
+        Start with the Playground
+        <ArrowIcon class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+      </a>
+      <a href="/docs" class="flex items-center gap-2 border border-white/20 text-white px-8 py-4 font-mono text-sm uppercase tracking-widest hover:border-purple-500/50 hover:bg-purple-500/10 transition-colors">
+        <DocsIcon class="w-4 h-4" />
+        Read the Docs
+      </a>
+    </div>
+  </div>
+</section>
