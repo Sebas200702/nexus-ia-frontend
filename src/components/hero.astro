@@ -1,0 +1,56 @@
+---
+import DocsIcon from '@/icons/docs.astro'
+import ArrowIcon from '@/icons/arrow.astro'
+---
+
+<section
+  class="relative z-10 mx-auto mt-16 flex w-full max-w-5xl flex-col items-start px-6 text-left md:mt-24 md:items-center md:text-center"
+>
+  <div
+    class="mb-10 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/3 px-4 py-1.5"
+  >
+    <span class="h-1.5 w-1.5 animate-pulse rounded-full bg-purple-400"></span>
+    <span class="font-mono text-xs tracking-widest text-gray-400 uppercase"
+      >Core v1.1 — Live</span
+    >
+  </div>
+  <h1
+    class="animate-fade-up font-display mb-8 text-6xl leading-[1.05] font-bold tracking-tighter text-white opacity-0 drop-shadow-2xl delay-100 md:text-7xl md:leading-[1.05] lg:text-[6rem]"
+  >
+    Pay less for AI.<br class="hidden md:block" />
+    <span
+      class="bg-linear-to-br from-purple-400 via-fuchsia-300 to-rose-200 bg-clip-text text-transparent"
+      >Without giving up control.</span
+    >
+  </h1>
+
+  <p
+    class="animate-fade-up mx-auto mb-10 max-w-2xl text-lg leading-relaxed font-light text-gray-400 opacity-0 delay-200 md:px-0 md:text-xl"
+  >
+    Nexus IA is a smart routing service that reduces AI costs in production. It
+    distributes requests across multiple AI providers and models — choosing the
+    most cost-effective option for each situation. You save money automatically.
+    You still decide when it matters.
+  </p>
+
+  <div
+    class="animate-fade-up flex w-full flex-col items-center justify-start gap-4 opacity-0 delay-300 sm:flex-row md:w-auto md:justify-center"
+  >
+    <a
+      href="/playground"
+      class="group flex w-full items-center justify-center gap-2 rounded-md bg-white px-8 py-4 text-[#070511] shadow-[0_0_40px_-10px_rgba(139,92,246,0.3)] transition-all hover:scale-[1.02] hover:bg-gray-200 sm:w-auto"
+    >
+      <span class="font-display text-lg font-semibold tracking-wide"
+        >Initialize Playground</span
+      >
+      <ArrowIcon size={24} />
+    </a>
+    <a
+      href="/docs"
+      class="flex w-full items-center justify-center gap-2 rounded-md border border-white/20 bg-transparent px-8 py-4 font-mono text-lg text-white transition-all hover:border-purple-500/50 hover:bg-purple-500/10 sm:w-auto"
+    >
+      <DocsIcon size={24} />
+      Read Documentation
+    </a>
+  </div>
+</section>

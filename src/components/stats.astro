@@ -1,0 +1,52 @@
+---
+const stats = [
+  {
+    value: '-40%',
+    label: 'Cost reduction',
+    desc: 'Stop paying premium prices for low-impact requests.',
+  },
+  {
+    value: '10+',
+    label: 'Model providers',
+    desc: 'OpenAI, Anthropic, Cohere, Meta & more without lock-in.',
+  },
+  {
+    value: '1',
+    label: 'API endpoint',
+    desc: 'Integrate once. Switch strategies without redeploying.',
+  },
+  {
+    value: '100%',
+    label: 'Your control',
+    desc: 'Force a specific provider or pin a model when it matters.',
+  },
+]
+---
+
+<section class="relative z-10 w-full max-w-5xl mx-auto px-6 py-24 animate-fade-up opacity-0 delay-300">
+  <!-- Section label -->
+  <p class="font-mono text-purple-300 text-xs tracking-widest uppercase mb-12 flex items-center gap-3">
+    <span class="w-4 h-px bg-purple-500/50"></span>
+    By the numbers
+  </p>
+
+  <!-- Grid 2x2 uniforme -->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    {stats.map((stat) => (
+      <div class="group flex flex-col gap-3 p-8 rounded-md border border-white/5 bg-white/2 backdrop-blur-sm hover:border-purple-500/20 hover:bg-white/4 transition-all duration-300">
+        <!-- Número grande -->
+        <span class="font-mono text-5xl md:text-6xl font-bold text-white tracking-tighter leading-none group-hover:text-purple-200 transition-colors">
+          {stat.value}
+        </span>
+        <!-- Label corto -->
+        <span class="font-mono text-xs text-purple-300 tracking-widest uppercase">
+          {stat.label}
+        </span>
+        <!-- Descripción -->
+        <p class="text-xs text-gray-500 font-light leading-relaxed">
+          {stat.desc}
+        </p>
+      </div>
+    ))}
+  </div>
+</section>
