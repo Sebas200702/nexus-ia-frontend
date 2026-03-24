@@ -9,12 +9,13 @@ import {
 } from '@/components/ui/select'
 import { Label } from '@/components/ui/label'
 import { usePlaygroundStore } from '@/stores/playgroundStore'
+import { PROVIDERS } from '@/data/mock-data'
 import { Cpu } from 'lucide-react'
 
 export function ModelSelect() {
   const config = usePlaygroundStore((s) => s.config)
   const setConfig = usePlaygroundStore((s) => s.setConfig)
-  const currentProvider = config.provider
+  const currentProvider = PROVIDERS.find((p) => p.id === config.provider)
 
   return (
     <div className="space-y-2">
@@ -33,11 +34,17 @@ export function ModelSelect() {
           <SelectValue placeholder="Select a model" />
         </SelectTrigger>
         <SelectContent className="border-white/10 bg-[#05030d] text-xs text-gray-100">
-          {config &&
-            currentProvider &&
-            // read provider models from PROVIDERS in mock-data when needed
-            // fallback: show current model only
-            (Array.isArray((config as any).model) ? [] : [])}
+          {currentProvider ? (
+            currentProvider.models.map((m) => (
+              <SelectItem key={m} value={m} className="text-xs">
+                {m}
+              </SelectItem>
+            ))
+          ) : (
+            <SelectItem value={config.model} className="text-xs">
+              {config.model}
+            </SelectItem>
+          )}
         </SelectContent>
       </Select>
     </div>
