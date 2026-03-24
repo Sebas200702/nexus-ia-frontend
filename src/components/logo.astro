@@ -1,18 +1,15 @@
 ---
-
-
+import BoxIcon from '@/icons/box.astro'
 ---
 
-<a href="/">
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    class="text-primary-foreground h-5 w-5"
-    stroke="currentColor"
-    stroke-width="2"
+<a href="/" class="group flex items-center gap-3">
+  <div
+    class="flex items-center justify-center border border-white/20 bg-white/2 p-1.5 text-white transition-colors group-hover:border-purple-400 group-hover:text-purple-400"
   >
-    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-    <path d="M2 17l10 5 10-5"></path>
-    <path d="M2 12l10 5 10-5"></path>
-  </svg>
+    <BoxIcon size={20} class="" />
+  </div>
+  <span
+    class="font-display mt-0.5 text-xl font-bold tracking-[0.2em] text-white uppercase"
+    >Nexus<span class="animate-pulse text-purple-400">_</span></span
+  >
 </a>
