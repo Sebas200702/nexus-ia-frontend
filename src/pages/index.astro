@@ -1,17 +1,86 @@
 ---
-
+import BaseLayout from '@/layouts/base.astro'
+import Header from '@/components/header.astro'
+import Hero from '@/components/hero.astro'
+import Stats from '@/components/stats.astro'
+import PlaygroundPreview from '@/components/playground-preview.astro'
+import ProblemStatement from '@/components/problem-statement.astro'
+import FeaturesGrid from '@/components/features-grid.astro'
+import SolutionParadigm from '@/components/solution-paradigm.astro'
+import BottomCTA from '@/components/bottom-cta.astro'
+import Footer from '@/components/footer.astro'
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <h1>Astro</h1>
-  </body>
-</html>
+<BaseLayout>
+  <Header />
+
+  <main
+    class="relative flex min-h-screen flex-col items-center overflow-hidden pt-24 pb-32"
+  >
+    <!-- Asymmetric background ambient glow -->
+    <div
+      class="pointer-events-none absolute top-[0%] left-[-10%] h-200 w-[50%] rounded-full bg-purple-900/20 blur-[120px]"
+    >
+    </div>
+    <div
+      class="pointer-events-none absolute right-[-5%] bottom-[20%] h-150 w-[40%] rounded-full bg-emerald-900/10 blur-[120px]"
+    >
+    </div>
+    <!-- Glow central para la zona de features/solución -->
+    <div
+      class="pointer-events-none absolute top-[45%] left-1/2 h-125 w-[60%] -translate-x-1/2 rounded-full bg-purple-800/10 blur-[150px]"
+    >
+    </div>
+
+    <!-- Pattern de grilla tecnica tipo blueprint cortado radialmente -->
+    <div
+      class="pointer-events-none absolute inset-0 z-[-1] bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] mask-[radial-gradient(ellipse_80%_60%_at_50%_0%,#000_70%,transparent_100%)] bg-size-[4rem_4rem]"
+    >
+    </div>
+
+    <Hero />
+
+    <div class="mt-24 mb-12 w-full">
+      <Stats />
+    </div>
+
+    <!-- Playground Section -->
+    <div class="relative mt-12 mb-32 w-full">
+      <!-- Glow connector line between sections -->
+      <div
+        class="absolute -top-16 left-1/2 h-32 w-px -translate-x-1/2 bg-linear-to-b from-transparent via-purple-500/50 to-transparent"
+      >
+      </div>
+      <PlaygroundPreview />
+    </div>
+
+    <!-- Divisor sutil antes de entrar al problema -->
+    <div class="mx-auto mb-16 w-full max-w-6xl px-6">
+      <div
+        class="h-px w-full bg-linear-to-r from-transparent via-white/10 to-transparent"
+      >
+      </div>
+    </div>
+
+    <ProblemStatement />
+
+    <div class="relative mt-8 mb-24 w-full">
+      <!-- Connector -->
+      <div
+        class="absolute -top-12 left-[15%] h-24 w-px bg-linear-to-b from-rose-500/20 to-transparent md:left-[20%]"
+      >
+      </div>
+    </div>
+
+    <SolutionParadigm />
+
+    <div class="mt-32 mb-16 w-full">
+      <FeaturesGrid />
+    </div>
+
+    <div class="mt-32 w-full">
+      <BottomCTA />
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

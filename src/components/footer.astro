@@ -1,0 +1,61 @@
+---
+const nav = [
+  { label: 'Playground', href: '/playground' },
+  { label: 'Documentation', href: '/docs' },
+  { label: 'GitHub', href: 'https://github.com' },
+]
+---
+
+<footer class="relative z-10 w-full border-t border-white/10 mt-20">
+
+  <!-- Conector visual — igual al que se usa arriba del Playground -->
+  <div class="relative w-full flex justify-center">
+    <div class="absolute -top-px left-1/2 -translate-x-1/2 w-full h-px bg-linear-to-r from-transparent via-purple-500/40 to-transparent"></div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-6 pt-16 pb-10">
+
+    <!-- Top row -->
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-10 pb-12 border-b border-white/5">
+
+      <!-- Brand block — mismo estilo que el badge de hero -->
+      <div class="flex flex-col gap-5">
+        <span class="font-display text-2xl font-bold tracking-tight text-white">
+          NEXUS<span class="text-purple-400">_IA</span>
+        </span>
+        <!-- Status badge — mismo patrón que el de hero.astro -->
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 border border-purple-500/20 bg-purple-500/5 font-mono text-[10px] text-purple-300 uppercase tracking-widest w-fit backdrop-blur-sm">
+          <span class="w-1.5 h-1.5 rounded-none bg-purple-400 animate-pulse"></span>
+           Core v1.1
+        </div>
+      </div>
+
+      <!-- Nav links — mismo tratamiento mono de los CTAs -->
+      <nav class="flex flex-col sm:flex-row gap-6 sm:gap-10">
+        {nav.map(link => (
+          <a
+            href={link.href}
+            class="font-mono text-xs text-gray-400 uppercase tracking-widest hover:text-white transition-colors relative group"
+          >
+            {link.label}
+            <span class="absolute -bottom-1 left-0 w-0 h-px bg-purple-500/60 transition-all duration-300 group-hover:w-full"></span>
+          </a>
+        ))}
+      </nav>
+    </div>
+
+    <!-- Bottom row -->
+    <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="font-mono text-[10px] text-gray-600 uppercase tracking-widest">
+        © {new Date().getFullYear()} Nexus IA — Built for production.
+      </p>
+      <!-- Detalle técnico — igual al label mono de problem-statement.astro -->
+      <p class="font-mono text-[10px] text-gray-700 uppercase tracking-widest flex items-center gap-3">
+        <span class="w-4 h-px bg-white/10"></span>
+        Smart routing. Zero lock-in.
+        <span class="w-4 h-px bg-white/10"></span>
+      </p>
+    </div>
+
+  </div>
+</footer>
