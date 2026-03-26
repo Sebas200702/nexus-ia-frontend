@@ -1,4 +1,4 @@
-import create from 'zustand'
+import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 import type { PlaygroundConfig, MockMessage } from '@/data/mock-data'
 import { DEFAULT_CONFIG } from '@/data/mock-data'
@@ -25,10 +25,13 @@ export const usePlaygroundStore = create<PlaygroundStore>()(
         }))
       },
       messages: [],
-      appendMessage: (message) => set((state) => ({ messages: [...state.messages, message] })),
+      appendMessage: (message) =>
+        set((state) => ({ messages: [...state.messages, message] })),
       updateMessage: (id, patch) =>
         set((state) => ({
-          messages: state.messages.map((m) => (m.id === id ? { ...m, ...patch } : m)),
+          messages: state.messages.map((m) =>
+            m.id === id ? { ...m, ...patch } : m
+          ),
         })),
       clearMessages: () => set({ messages: [] }),
       isStreaming: false,
@@ -41,4 +44,3 @@ export const usePlaygroundStore = create<PlaygroundStore>()(
   )
 )
 
-export default usePlaygroundStore
