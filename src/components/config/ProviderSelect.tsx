@@ -1,5 +1,3 @@
-'use client'
-
 import {
   Select,
   SelectContent,
@@ -25,13 +23,13 @@ export function ProviderSelect() {
 
   return (
     <div className="space-y-2">
-      <Label className="flex items-center gap-2 font-mono text-[11px] tracking-[0.2em] text-gray-400 uppercase">
-        <Sparkles className="h-3 w-3 text-purple-300" />
+      <Label className="flex items-center gap-2 font-mono text-xs tracking-[0.2em] font-semibold text-gray-300 uppercase">
+        <Sparkles className="h-3.5 w-3.5  text-purple-300" />
         Provider
       </Label>
       <Select
         value={config.provider}
-        onValueChange={(v) => handleProviderChange(v as ProviderId | null)}
+        onValueChange={(v) => handleProviderChange(v)}
       >
         <SelectTrigger className="h-8 border-white/10 bg-black/70 text-xs text-gray-100">
           <SelectValue placeholder="Select a provider" />
