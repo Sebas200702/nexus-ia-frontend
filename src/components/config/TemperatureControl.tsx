@@ -1,5 +1,3 @@
-'use client'
-
 import { Label } from '@/components/ui/label'
 import { Slider } from '@/components/ui/slider'
 import { usePlaygroundStore } from '@/stores/playgroundStore'
@@ -11,7 +9,7 @@ export function TemperatureControl() {
   return (
     <div className="space-y-3">
       <div className="flex items-center justify-between">
-        <Label className="flex items-center gap-2 font-mono text-[11px] tracking-[0.2em] text-gray-400 uppercase">
+        <Label className="flex items-center gap-2 font-mono text-xs font-semibold tracking-[0.2em] text-gray-300 uppercase">
           <span>Temperature</span>
         </Label>
         <span className="font-mono text-[11px] text-gray-200">
