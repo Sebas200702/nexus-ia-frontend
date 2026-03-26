@@ -1,5 +1,3 @@
-'use client'
-
 import {
   Select,
   SelectContent,
@@ -19,29 +17,29 @@ export function ModelSelect() {
 
   return (
     <div className="space-y-2">
-      <Label className="flex items-center gap-2 font-mono text-[11px] tracking-[0.2em] text-gray-400 uppercase">
-        <Cpu className="h-3 w-3 text-purple-300" />
+      <Label className="flex items-center gap-2 font-mono text-xs font-semibold tracking-[0.2em] text-gray-300 uppercase">
+        <Cpu className="h-3.5 w-3.5 text-purple-300" />
         Model
       </Label>
       <Select
         value={config.model}
         onValueChange={(model) => {
           if (!model) return
-          setConfig({ model: model as string })
+          setConfig({ model: model })
         }}
       >
-        <SelectTrigger className="h-8 border-white/10 bg-black/70 text-xs text-gray-100">
+        <SelectTrigger className="h-8 border-white/10 bg-black/70 text-sm text-gray-100">
           <SelectValue placeholder="Select a model" />
         </SelectTrigger>
-        <SelectContent className="border-white/10 bg-[#05030d] text-xs text-gray-100">
+        <SelectContent className="border-white/10 bg-[#05030d] text-sm text-gray-100">
           {currentProvider ? (
             currentProvider.models.map((m) => (
-              <SelectItem key={m} value={m} className="text-xs">
+              <SelectItem key={m} value={m} className="text-sm">
                 {m}
               </SelectItem>
             ))
           ) : (
-            <SelectItem value={config.model} className="text-xs">
+            <SelectItem value={config.model} className="text-sm">
               {config.model}
             </SelectItem>
           )}
