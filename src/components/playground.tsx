@@ -1,13 +1,9 @@
-'use client'
-
-
 import { ConfigSidebar } from '@/components/config-slider'
 import { ChatPanel } from '@/components/chat'
 import { CodePanel } from '@/components/code-panel'
-import { usePlaygroundStore } from '@/stores/playgroundStore'
+
 
 export const NexusPlaygroundPage = () => {
-
   return (
     <div className="relative min-h-screen w-full bg-[#05030d] text-white">
 
