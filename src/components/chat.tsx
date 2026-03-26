@@ -1,5 +1,3 @@
-'use client'
-
 import { useState, useCallback } from 'react'
 import {
   Conversation,
@@ -7,11 +5,7 @@ import {
   ConversationEmptyState,
   ConversationScrollButton,
 } from '@/components/ai-elements/conversation'
-import {
-  Message,
-  MessageContent,
-  MessageResponse,
-} from '@/components/ai-elements/message'
+
 import MessageList from './chat/MessageList'
 import {
   Composer,
@@ -20,17 +14,10 @@ import {
   ComposerSubmitButton,
   ComposerToolbar,
 } from '@/components/ai-elements/composer'
-import {
-  Reasoning,
-  ReasoningTrigger,
-  ReasoningContent,
-} from '@/components/ai-elements/reasoning'
-
 import { type MockMessage, SUGGESTIONS, MOCK_RESPONSES } from '@/data/mock-data'
 import { usePlaygroundStore } from '@/stores/playgroundStore'
-
 import { Bot, Sparkles, Loader2 } from 'lucide-react'
-import { cn } from '@/lib/utils'
+
 
 export const ChatPanel = () => {
   const config = usePlaygroundStore((s) => s.config)
@@ -117,7 +104,7 @@ export const ChatPanel = () => {
   }
 
   return (
-    <div className="relative flex h-full flex-1 flex-col rounded-lg border border-white/10 bg-black/40 backdrop-blur">
+    <div className="relative flex w-full h-full flex-1 flex-col rounded-lg border border-white/10 bg-black/40 backdrop-blur">
       {/* Glows de fondo dentro del panel */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-16 right-0 h-40 w-40 rounded-full bg-purple-600/20 blur-[90px]" />
@@ -128,14 +115,14 @@ export const ChatPanel = () => {
         {/* Chat header estilo Nexus */}
         <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
           <div className="flex items-center gap-2">
-            <div className="flex h-7 w-7 items-center justify-center rounded-md bg-purple-600/20">
-              <Sparkles className="h-3.5 w-3.5 text-purple-300" />
+            <div className="flex h-8 w-8 items-center justify-center rounded-md bg-purple-600/20">
+              <Sparkles className="h-4 w-4 text-purple-300" />
             </div>
             <div className="flex flex-col">
-              <span className="text-xs font-medium text-white">
+              <span className="text-md font-medium text-white">
                 Nexus IA Playground
               </span>
-              <span className="font-mono text-[10px] tracking-[0.2em] text-gray-500 uppercase">
+              <span className="font-mono text-[10px] tracking-[0.2em] text-gray-400 uppercase">
                 Interactive Demo
               </span>
             </div>
@@ -183,9 +170,7 @@ export const ChatPanel = () => {
                 </div>
               </ConversationEmptyState>
             ) : (
-              <>
-                <MessageList messages={messages} isStreaming={isStreaming} />
-              </>
+              <MessageList messages={messages} isStreaming={isStreaming} />
             )}
           </ConversationContent>
           <ConversationScrollButton />
@@ -225,7 +210,7 @@ export const ChatPanel = () => {
 
         {/* Streaming indicator */}
         {isStreaming && (
-          <div className="absolute inset-x-0 bottom-[72px] flex justify-center">
+          <div className="absolute inset-x-0 bottom-18 flex justify-center">
             <div className="flex items-center gap-1.5 rounded-full border border-purple-500/40 bg-purple-500/10 px-3 py-1.5 text-[11px] text-purple-200 backdrop-blur">
               <Loader2 className="h-3 w-3 animate-spin" />
               <span>Streaming response from Nexus IA…</span>
