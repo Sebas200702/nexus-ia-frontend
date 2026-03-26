@@ -1,5 +1,3 @@
-'use client'
-
 import { useControllableState } from '@radix-ui/react-use-controllable-state'
 import {
   Collapsible,
@@ -88,9 +86,7 @@ export const Reasoning = memo(
     useEffect(() => {
       if (isStreaming) {
         hasEverStreamedRef.current = true
-        if (startTimeRef.current === null) {
-          startTimeRef.current = Date.now()
-        }
+        startTimeRef.current ??= Date.now();
       } else if (startTimeRef.current !== null) {
         setDuration(Math.ceil((Date.now() - startTimeRef.current) / MS_IN_S))
         startTimeRef.current = null
